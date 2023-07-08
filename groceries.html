@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Groceries</title>
+  <script src="grocery.js"></script>
+</head>
+<body>
+  <h1>Grocery List</h1>
+  <ul id="groceryList"></ul>
+
+  <script>
+    const groceryList = document.getElementById('groceryList');
+
+    const groceries = [
+      new Grocery('Milk', 3),
+      new Grocery('Bread', 6),
+      new Grocery('Eggs', 11),
+    ];
+
+    groceries.forEach((grocery) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${grocery.name}: ${grocery.quantity}`;
+      groceryList.appendChild(listItem);
+    });
+  </script>
+</body>
+</html>
